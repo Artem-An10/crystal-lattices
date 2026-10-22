@@ -1,0 +1,20 @@
+/* OWUI 0.11.3: помечаем статус-строку с текстом ошибки, чтобы custom.css её не прятал */
+(() => {
+	const RE = /(error|failed|exception|traceback|timeout|ошибк|не удалось|сбой)/i;
+	let raf = 0;
+
+	const scan = () => {
+		raf = 0;
+		document.querySelectorAll('.status-description').forEach((el) => {
+			const isErr = !el.classList.contains('shimmer') && RE.test(el.textContent || '');
+			if (isErr) el.setAttribute('data-lm-error', '1');
+			else el.removeAttribute('data-lm-error');
+		});
+	};
+
+	const schedule = () => { if (!raf) raf = requestAnimationFrame(scan); };
+
+	schedule();
+	new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, characterData: true });
+})();
+

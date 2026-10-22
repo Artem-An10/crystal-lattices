@@ -1,0 +1,88 @@
+data_I
+_database_code_depnum_ccdc_archive 'CCDC 1972889'
+#==============================================================================
+
+# PROCESSING SUMMARY (IUCr Office Use Only)
+
+_journal_date_recd_electronic      2019-10-25
+_journal_date_to_coeditor         ?
+_journal_date_from_coeditor       ?
+_journal_date_accepted     2019-12-18
+_journal_date_printers_first      ?
+_journal_date_printers_final      ?
+_journal_date_proofs_out          ?
+_journal_date_proofs_in           ?
+_journal_coeditor_name            ?
+_journal_coeditor_code      RA5072SUP1
+_journal_coeditor_notes
+; ?
+;
+_journal_paper_category      FA
+_journal_techeditor_code      B191695
+_iucr_compatibility_tag          ACTA95
+_journal_techeditor_notes  
+;
+;
+_journal_coden_ASTM               ?
+_journal_name_full                ?
+_journal_year                     ?
+_journal_volume                   ?
+_journal_issue                    ?
+_journal_page_first               ?
+_journal_page_last                ?
+_journal_suppl_publ_number        ?
+_journal_suppl_publ_pages         ?
+
+#==============================================================================
+
+_audit_creation_method ISOCIF
+ 
+_cell_length_a    4.12300
+_cell_length_b    6.08600
+_cell_length_c    13.81200
+_cell_angle_alpha 90.00000
+_cell_angle_beta  90.00000
+_cell_angle_gamma 90.00000
+_cell_volume      346.57869
+ 
+_symmetry_space_group_name_H-M "I 2/m 2/m 2/m"
+_symmetry_Int_Tables_number 71
+_space_group.reference_setting '071:-I 2 2'
+_space_group.transform_Pp_abc a,b,c;0,0,0
+ 
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 x,y,z
+2 x,-y,-z
+3 -x,y,-z
+4 -x,-y,z
+5 -x,-y,-z
+6 -x,y,z
+7 x,-y,z
+8 x,y,-z
+9 x+1/2,y+1/2,z+1/2
+10 x+1/2,-y+1/2,-z+1/2
+11 -x+1/2,y+1/2,-z+1/2
+12 -x+1/2,-y+1/2,z+1/2
+13 -x+1/2,-y+1/2,-z+1/2
+14 -x+1/2,y+1/2,z+1/2
+15 x+1/2,-y+1/2,z+1/2
+16 x+1/2,y+1/2,-z+1/2
+ 
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_fract_symmform
+U1  U    4 i 0.00000 0.00000 0.13471 1.00000 0,0,Dz 
+Te1 Te   4 h 0.00000 0.25058 0.50000 1.00000 0,Dy,0 
+Te2 Te   4 j 0.50000 0.00000 0.29800 1.00000 0,0,Dz 
+ 
+# end of cif
+

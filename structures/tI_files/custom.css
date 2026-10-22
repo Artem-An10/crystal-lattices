@@ -1,0 +1,50 @@
+/* ─── OWUI 0.11.3: компактный ответ модели ─────────────────────────────
+   Специфичность правил скрытия обнулена через :where(), поэтому
+   «возвраты» ниже переопределяют их без !important.
+   ────────────────────────────────────────────────────────────────────── */
+
+/* 1. Прячем процессные секции (в норме — завершённые) */
+:where(.chat-assistant) :where(
+	div[id*='-detail-group'],                                                  /* «Exploring …» */
+	div[id*='-tool-call'],                                                     /* одиночный tool-call */
+	div[id$='-tc'],                                                            /* он же, markdown-ветка */
+	#response-content-container > div > div[id='']:has(> button[aria-expanded]), /* Reasoning / Code Interpreter */
+	#response-content-container > div:has(> button[aria-expanded]),            /* пилюля «N Sources» */
+	#response-content-container > div:has(.code-execution-name)                /* чипы кода */
+) {
+	display: none;
+}
+
+/* 1b. Статус поиска/знаний — прячем только неактивный и не ошибочный */
+.chat-assistant div:has(> button > div > .status-description):not(:has(.shimmer)):not(:has([data-lm-error])) {
+	display: none;
+}
+
+/* 2. Возвращаем АКТИВНОЕ — это и есть лоадер в одну строку */
+.chat-assistant :is(div[id*='-detail-group'], div[id*='-tool-call'], div[id$='-tc']):has(.shimmer),
+.chat-assistant #response-content-container > div > div[id='']:has(> button[aria-expanded]):has(.shimmer) {
+	display: block;
+}
+
+/* 3. Возвращаем ошибки инструментов (крест) и отказы */
+.chat-assistant :is(div[id*='-detail-group'], div[id*='-tool-call'], div[id$='-tc']):has([class*='text-red-']) {
+	display: block;
+}
+
+/* 4. Возвращаем то, что требует решения пользователя: Allow / Deny */
+.chat-assistant :is(div[id*='-detail-group'], div[id*='-tool-call'], div[id$='-tc']):has(.tool-call-allow-button, .tool-call-deny-button) {
+	display: block;
+}
+
+/* 5. Спиннер в живой строке статуса (у группы свой спиннер уже есть) */
+@keyframes lm-spin { to { transform: rotate(1turn); } }
+.chat-assistant .status-description:has(.shimmer)::before {
+	content: '';
+	flex: 0 0 auto;
+	width: 0.75rem; height: 0.75rem;
+	border-radius: 50%;
+	border: 0.125rem solid currentColor;
+	border-top-color: transparent;
+	opacity: 0.45;
+	animation: lm-spin 0.75s linear infinite;
+}
