@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Кристаллические решетки</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #172033;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    h1 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
+
+    .intro {
+      max-width: 800px;
+      color: #c5d1e2;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+      );
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .card {
+      display: block;
+      padding: 20px;
+      border: 1px solid #35445e;
+      border-radius: 12px;
+      background: #202c42;
+      color: white;
+      text-decoration: none;
+      transition:
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .card:hover {
+      background: #2a3b57;
+      transform: translateY(-3px);
+    }
+
+    .card:focus-visible {
+      outline: 3px solid #65bdff;
+      outline-offset: 3px;
+    }
+
+    .code {
+      display: block;
+      margin-bottom: 8px;
+      color: #65bdff;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .example {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #bbc9db;
+    }
+
+    footer {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #35445e;
+      color: #bbc9db;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #65bdff;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Кристаллические решетки</h1>
+
+    <p class="intro">
+      Интерактивные модели 14 решеток Браве.
+      Выбери решетку, чтобы рассмотреть ее в трехмерном
+      пространстве. На странице решетки нажми название
+      вещества, чтобы открыть его атомную структуру.
+    </p>
+
+    <p class="intro">
+      Узлы решетки Браве и атомы вещества — не одно
+      и то же. Атомные модели строятся по CIF-файлам.
+    </p>
+
+    <nav class="grid" aria-label="Выбор решетки Браве">
+      <a class="card" href="01_aP.html">
+        <span class="code">aP</span>
+        Триклинная примитивная
+        <span class="example">Пример: медный купорос</span>
+      </a>
+
+      <a class="card" href="02_mP.html">
+        <span class="code">mP</span>
+        Моноклинная примитивная
+        <span class="example">Пример: бадделеит, ZrO₂</span>
+      </a>
+
+      <a class="card" href="03_mC.html">
+        <span class="code">mC</span>
+        Моноклинная базоцентрированная
+        <span class="example">Пример: гипс</span>
+      </a>
+
+      <a class="card" href="04_oP.html">
+        <span class="code">oP</span>
+        Орторомбическая примитивная
+        <span class="example">Пример: арагонит</span>
+      </a>
+
+      <a class="card" href="05_oC.html">
+        <span class="code">oC</span>
+        Орторомбическая базоцентрированная
+        <span class="example">Пример: альфа-галлий</span>
+      </a>
+
+      <a class="card" href="06_oI.html">
+        <span class="code">oI</span>
+        Орторомбическая объемноцентрированная
+        <span class="example">Пример: UTe₂</span>
+      </a>
+
+      <a class="card" href="07_oF.html">
+        <span class="code">oF</span>
+        Орторомбическая гранецентрированная
+        <span class="example">Пример: альфа-сера</span>
+      </a>
+
+      <a class="card" href="08_tP.html">
+        <span class="code">tP</span>
+        Тетрагональная примитивная
+        <span class="example">Пример: рутил</span>
+      </a>
+
+      <a class="card" href="09_tI.html">
+        <span class="code">tI</span>
+        Тетрагональная объемноцентрированная
+        <span class="example">Пример: бета-олово</span>
+      </a>
+
+      <a class="card" href="10_hP.html">
+        <span class="code">hP</span>
+        Гексагональная примитивная
+        <span class="example">Пример: магний</span>
+      </a>
+
+      <a class="card" href="11_hR.html">
+        <span class="code">hR</span>
+        Ромбоэдрическая
+        <span class="example">Пример: кальцит</span>
+      </a>
+
+      <a class="card" href="12_cP.html">
+        <span class="code">cP</span>
+        Кубическая примитивная
+        <span class="example">Пример: CsCl</span>
+      </a>
+
+      <a class="card" href="13_cI.html">
+        <span class="code">cI</span>
+        Кубическая объемноцентрированная
+        <span class="example">Пример: альфа-железо</span>
+      </a>
+
+      <a class="card" href="14_cF.html">
+        <span class="code">cF</span>
+        Кубическая гранецентрированная
+        <span class="example">Пример: медь</span>
+      </a>
+    </nav>
+
+    <footer>
+      <p>
+        Учебный проект. Параметры моделей решеток Браве
+        условные. Параметры атомных структур определяются
+        загруженными CIF-файлами.
+      </p>
+
+      <p>
+        Источники структур:
+        <a href="https://www.crystallography.net/cod/">
+          Crystallography Open Database
+        </a>
+        и публикации, указанные в CIF-файлах.
+      </p>
+
+      <p>
+        Визуализация: Three.js и JSmol.
+        Для загрузки внешних библиотек нужен интернет.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
